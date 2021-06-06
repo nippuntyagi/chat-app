@@ -24,9 +24,29 @@ const Home = () => {
 	}
   return (
 		<div>
-				<h1>Home {JSON.stringify(user)} </h1>
-				<button onClick={setAsJohn}>Set As John</button>
-				<button onClick={setAsTom}>Set As Tom</button>
+			 <div className="row">
+				<div className="col s12 m6">
+					<div className="card blue-grey darken-1">
+						<div className="card-content white-text">
+							<span className="card-title">welcome {user ? user.name:''}</span>
+						</div>
+						<form>
+							<div className="row">
+								<div className="input-field col s12">
+									<input id="room" type="text" className="validate" placeholder="Enter a room name"/>
+									<label htmlFor="rom">Room</label>
+								</div>
+							</div>
+							<button className='btn'>Create Room</button>
+						</form>
+						<div className="card-action">
+							<a href="#" onClick={setAsJohn}>Set As John</a>
+							<a href="#" onClick={setAsTom}>Set As Tom</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				{/* <h1>Home {JSON.stringify(user)} </h1> */}
 				<Link to='/chat'>
 					<button>Go to chat</button>
 				</Link>
